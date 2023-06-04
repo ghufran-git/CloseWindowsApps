@@ -1,15 +1,19 @@
 /*
 Made By Ghufran Ullah - robotics-dev
 Made for Upwork 
+All Rights Reserved
 
-
+This program gets the processes of windows and lists them all with the names of
+the exe that is running.
 */
+
+
 
 #include <iostream>
 #include <Windows.h>
 #include <TlHelp32.h>
 
-void ListProcesses()
+void ListProcessesWithNames()
 {
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (hSnapshot == INVALID_HANDLE_VALUE)
@@ -43,7 +47,7 @@ void ListProcesses()
 
 int main()
 {
-    ListProcesses();
+    ListProcessesWithNames();
 
     return 0;
 }
